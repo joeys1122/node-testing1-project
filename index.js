@@ -7,9 +7,10 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  Object.keys(obj).forEach(key => obj[key] = obj[key].trim())
+  const newObj = { ...obj }
+  Object.keys(newObj).forEach(key => newObj[key] = newObj[key].trim())
 
-  return obj;
+  return newObj
 }
 
 /**
@@ -21,7 +22,9 @@ function trimProperties(obj) {
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  Object.keys(obj).forEach(key => obj[key] = obj[key].trim())
+
+  return obj;
 }
 
 /**
