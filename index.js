@@ -161,10 +161,7 @@ class Car {
     return this.tank * this.milesPerGallon
   }
 }
-const focus = new Car('focus', 20, 30)
-console.log(focus.drive(600))
-console.log(focus.drive(1))
-console.log(focus.refuel(99))
+
 /**
  * [Exercise 7] Asynchronously resolves whether a number is even
  * @param {number} number - the number to test for evenness
@@ -179,7 +176,15 @@ console.log(focus.refuel(99))
  * })
  */
 function isEvenNumberAsync(number) {
-  // ✨ implement
+  return new Promise(resolve => {
+    let isEven = number % 2
+
+    if(isEven === 0) {
+      resolve(true)
+    } else {
+      resolve(false)
+    }
+  })
 }
 
 module.exports = {
