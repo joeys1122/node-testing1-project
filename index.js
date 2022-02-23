@@ -7,7 +7,9 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  // ✨ implement
+  Object.keys(obj).forEach(key => obj[key] = obj[key].trim())
+
+  return obj;
 }
 
 /**
